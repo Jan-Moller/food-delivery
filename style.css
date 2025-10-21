@@ -1,28 +1,78 @@
-main {
-    padding-top: 100px;
+.main_content_container {
+    width: calc(100% - 300px);
     display: flex;
-    flex-grow: 1;
-}
-
-.main_content_container{
-   width: calc(100% - 300px);
-   border: 1px solid black;
-   height: 1500px;
-   background-color: green;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* min-height: calc(100vh - 200px); */
+    height: 2000px;
 }
 
 .basket_wrapper {
+    position: fixed;
+    right: 0; 
     width: 300px;
-    border: 1px solid black; 
-   
+    height: 100%;
+    padding-bottom: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .basket_container {
-    border: 1px solid black;
     background-color: blue;
     height: 300px;
     position: fixed;
     top: 100px;
     left: calc(100% - 300px);
     right: 0;
+}
+
+.restaurant_info_section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant_info_images {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_restaurant_img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.main_restaurant_logo {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid gray; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.restaurant_rating{
+    color: var(--primary-color)
+}
+
+.dish_categories {
+    background-color: #F7F6F1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px; 
+}
+
+.dish_category {
+    margin: 0 20px 0 20px
+}
+
+.dish_categories img {
+    height: 30px;
+    width: 30px;
 }

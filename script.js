@@ -11,3 +11,31 @@ async function includeHTML() {
         }
     }
 }
+
+function init() {
+    includeHTML();
+    renderDishCategories();
+}
+
+function renderDishCategories() {
+    let uniqueCategories = createUniqueDishCategoriesArray();
+    let dishCategoriesRef = document.getElementById('dish_categories');
+    dishCategoriesRef.innerHTML = '';
+
+    for (let i = 0; i < uniqueCategories.length; i++) {
+        const category = uniqueCategories[i];
+        dishCategoriesRef.innerHTML += /*html*/ `
+        <span class="dish_category">${category}</span>
+        `
+    }}
+
+function createUniqueDishCategoriesArray() {
+    let categories = []
+    for (let i = 0; i < menu.dishes.length; i++) {
+        const dish_section = menu.dishes[i].dish_section;
+        categories.push(dish_section);
+    }
+    const uniqueCategories = [...new Set(categories)];
+    return uniqueCategories; 
+}
+

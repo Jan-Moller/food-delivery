@@ -9,16 +9,33 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/standard.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <script src="scripts/db.js"></script>
     <script src="script.js"></script>
     <script src="scripts/template.js"></script>
 </head>
 
-<body onload="includeHTML()">
+<body onload="init()">
     <header class="header_main" w3-include-html="templates/header.html"></header>
     <header class="header_placeholder"></header>
     <main>
-        <section class="main_content_container"></section>
+        <section class="main_content_container">
+            <section class="restaurant_info_section">
+                <article class="restaurant_info_images">
+                    <img class="main_restaurant_img" src="assets/img/main_restaurant_img.jpg" alt="Bild eines Essens">
+                    <img class="main_restaurant_logo" src="assets/img/restaurant_logo.png" alt="Logo des Restaurants">
+                </article>
+                <article class="mg16">
+                    <h2>Oma's Original Küche</h2>
+                    <p class="restaurant_rating">Bewertung (4.7 von 5 Sterne)</p>
+                </article>
+            </section>
+            <section class="dish_categories">
+                <img class="mg16" src="assets/icons/arrow.png" alt="Bild eines Pfeils">
+                <span id="dish_categories"></span>
+                <span>Beilagen</span>
+            </section>
+        </section>
         <section class="basket_wrapper">
             <article class="basket_container"></article>
         </section>
