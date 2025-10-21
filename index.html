@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Food Delivery Plattform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/standard.css">
+    <script src="scripts/db.js"></script>
+    <script src="script.js"></script>
+    <script src="scripts/template.js"></script>
+</head>
+
+<body onload="includeHTML()">
+    <header class="header_main" w3-include-html="templates/header.html"></header>
+    <header class="header_placeholder"></header>
+    <main>
+        <section class="main_content_container"></section>
+        <section class="basket_wrapper">
+            <article class="basket_container"></article>
+        </section>
+    </main>
+
+    <footer class="footer_main" w3-include-html="templates/footer.html"></footer>
+
+</body>
+
+</html>

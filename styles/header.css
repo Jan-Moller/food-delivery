@@ -1,0 +1,23 @@
+.header_main {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: var(--primary-color);
+    padding: 30px; 
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.header_logo {
+    height: 50px;
+}
+
+.header_menu_icon {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
