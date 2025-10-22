@@ -3,8 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* min-height: calc(100vh - 200px); */
-    height: 2000px;
+    min-height: calc(100vh - 200px);
 }
 
 .basket_wrapper {
@@ -60,7 +59,7 @@
     color: var(--primary-color)
 }
 
-.dish_categories {
+.dish_category_navbar {
     background-color: #F7F6F1;
     display: flex;
     justify-content: flex-start;
@@ -72,7 +71,30 @@
     margin: 0 20px 0 20px
 }
 
-.dish_categories img {
+.dish_category_navbar img {
     height: 30px;
     width: 30px;
+}
+
+.dish_category_article{
+    display: flex;
+    flex-direction: column;
+}
+
+.dish_category_header_img {
+    height: 175px;
+    object-fit: cover;
+}
+
+.dish_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 175px;
+    border: 1px solid rgb(235, 231, 231);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.dish_price{
+    color: var(--primary-color); 
 }

@@ -83,5 +83,19 @@ let menu = {
     "Wedges",
     "Kroketten",
     "Rahmspinat"
+  ],
+  "section_images": [
+    {
+      "dish_section": 'Hauptgericht',
+      "image": "assets/img/main_dish.jpg"
+    },
+    {
+      "dish_section": 'Dessert',
+      "image": "assets/img/dessert.jpg"
+    },
+    {
+      "dish_section": 'Vorspeise',
+      "image": "assets/img/starter.jpg"
+    }
   ]
 }
