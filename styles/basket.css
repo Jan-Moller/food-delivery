@@ -1,0 +1,122 @@
+.basket_wrapper {
+    position: fixed;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    padding-bottom: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.basket_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 350px;
+    position: fixed;
+    left: calc(100% - 350px);
+    right: 0;
+}
+
+.basket_border {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid rgb(235, 231, 231);
+    margin-bottom: 20px;
+}
+
+.basket_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 350px;
+    overflow: auto;
+}
+
+.basket_indiviual_dish {
+    width: 100%;
+    padding: 0 10px 0 10px;
+}
+
+.basket_indiviual_dish h4 {
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.basket_indiviual_dish_functions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket_indiviual_dish_amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket_indiviual_dish_style {
+    margin: 0 10px 0 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--third-color)
+}
+
+.basket_individual_dish_icon {
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.basket_price_section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px 0 10px;
+}
+
+#minimum_order_message {
+    font-size: 14px;
+    text-align: center;
+}
+
+.mobile_basket_btn {
+    display: none;
+}
+
+.show_mobile_basket {
+    transform: translateX(0) !important;
+    transition: transform 0.75s ease-in-out;
+}
+
+.mobile_close_shopping_cart_btn {
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .basket_wrapper {
+        position: fixed;
+        z-index: 100;
+        background-color: white;
+        transform: translateX(100%);
+        transition: transform 0.75s ease-in-out;
+    }
+
+    .mobile_basket_btn {
+        display: block;
+        position: sticky;
+        height: 50px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .mobile_close_shopping_cart_btn {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+}

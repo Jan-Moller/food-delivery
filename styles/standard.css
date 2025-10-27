@@ -7,6 +7,7 @@
 
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 h1,
@@ -19,16 +20,27 @@ p {
     color: var(--third-color);
 }
 
+a {
+    text-decoration: none;
+    color: var(--secondary-color)
+}
+
 body {
     font-family: 'Rubik';
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 main {
     display: flex;
     align-items: flex-start;
+    position: relative;
+}
+
+.d-none {
+    display: none;
 }
 
 .mg16{
@@ -37,4 +49,10 @@ main {
 
 .pdl-l6{
     padding-left: 16px;
+}
+
+.flex-sb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

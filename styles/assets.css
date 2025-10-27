@@ -1,0 +1,15 @@
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 40px;
+    font-family: 'Rubik';
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #F0ECE6;
+    color: gray;
+    cursor: default;
+}

@@ -1,27 +1,13 @@
 .main_content_container {
-    width: calc(100% - 300px);
+    width: calc(100% - 350px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     min-height: calc(100vh - 200px);
 }
 
-.basket_wrapper {
-    position: fixed;
-    right: 0; 
-    width: 300px;
-    height: 100%;
-    padding-bottom: 200px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.basket_container {
-    background-color: blue;
-    height: 300px;
-    position: fixed;
-    top: 100px;
-    left: calc(100% - 300px);
-    right: 0;
+.restaurant_title {
+    margin-top: 40px;
 }
 
 .restaurant_info_section {
@@ -51,11 +37,11 @@
     transform: translateX(-50%);
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid gray; 
+    border: 1px solid gray;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.restaurant_rating{
+.restaurant_rating {
     color: var(--primary-color)
 }
 
@@ -64,11 +50,25 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px; 
+    gap: 20px;
+    overflow: auto;
+}
+
+#existing_dish_categories {
+    display: flex;
 }
 
 .dish_category {
-    margin: 0 20px 0 20px
+    margin: 0 20px 0 20px;
+    cursor: pointer;
+}
+
+.dish_category:hover {
+    text-decoration: underline;
+}
+
+.dish_category_extras {
+    margin-left: 0;
 }
 
 .dish_category_navbar img {
@@ -76,7 +76,7 @@
     width: 30px;
 }
 
-.dish_category_article{
+.dish_category_article {
     display: flex;
     flex-direction: column;
 }
@@ -87,6 +87,7 @@
 }
 
 .dish_container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -95,6 +96,44 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.dish_price{
-    color: var(--primary-color); 
+.dish_container img {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    border-left: 1px solid rgb(235, 231, 231);
+    border-bottom: 1px solid rgb(235, 231, 231);
+    cursor: pointer;
+}
+
+.dish_price {
+    color: var(--primary-color);
+}
+
+#confirm_order_dialog {
+    height: 50vh;
+    width: 50%;
+    border: none;
+}
+
+#confirm_order_dialog span {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#confirm_order_dialog::backdrop {
+    background: rgba(20, 20, 20, 0.342);
+}
+
+@media (max-width: 800px) {
+    .main_content_container {
+        width: 100%;
+        margin-bottom: 0; 
+    }
 }

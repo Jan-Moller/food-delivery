@@ -2,6 +2,7 @@ let allExistingDishCategories = ['Hauptgericht', 'Dessert', 'Vorspeise', 'Geträ
 let uniqueCategories = [];
 let renderDishesArray = [];
 
+
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -20,6 +21,7 @@ async function includeHTML() {
 function init() {
     includeHTML();
     renderDishCategoriesNavigation();
+    renderSideDishSection();
 }
 
 
@@ -30,9 +32,7 @@ function renderDishCategoriesNavigation() {
 
     for (let i = 0; i < uniqueCategories.length; i++) {
         const category = uniqueCategories[i];
-        dishCategoriesRef.innerHTML += /*html*/ `
-        <span class="dish_category">${category}</span>
-        `
+        dishCategoriesRef.innerHTML += getTemplateDishCategoriesNavigation(category);
     }
     renderDishSections();
 }
@@ -65,27 +65,16 @@ function renderDishSections() {
 
 function renderIndiviualDishSection(category) {
     let dishCategoryRef = document.getElementById('dish_category_section')
-    dishCategoryRef.innerHTML += /*html*/ ` 
-    <article class="dish_category_article" id='dish_category_${category}'>
-        <img class="dish_category_header_img mg16" id='dish_category_${category}_img' src="" alt="">
-        <h3 class="mg16 pdl-l6">${category}</h3>
-        <div id="dish_container_${category}"></div>
-    </article>`
+    dishCategoryRef.innerHTML += getTemplateIndiviualDishSection(category);
 }
+
 
 function renderIndiviualDishes(category) {
     let dishCategoryRef = document.getElementById(`dish_container_${category}`)
     for (let i = 0; i < renderDishesArray.length; i++) {
-        dish = renderDishesArray[i];
+        let dish = renderDishesArray[i];
         dish.price = dish.price.toFixed(2);
-        dishCategoryRef.innerHTML += /*html*/ `
-        <article class="dish_container mg16 pdl-l6">
-            <h4>${dish.dish}</h4>
-            <p>${dish.description}</p>
-            <h5 class="dish_price">${dish.price}€</h5>
-
-        </article>
-        `
+        dishCategoryRef.innerHTML += getTemplateIndiviualDishes(dish);
     }
 }
 
@@ -93,9 +82,25 @@ function renderIndiviualDishes(category) {
 function renderDishSectionImage(category) {
     for (let i = 0; i < menu.section_images.length; i++) {
         const section = menu.section_images[i].dish_section;
-        if (category == section) {
-            document.getElementById(`dish_category_${category}_img`).src = menu.section_images[i].image
-        }
+        if (category == section) { document.getElementById(`dish_category_${category}_img`).src = menu.section_images[i].image }
+    }
+}
+
+
+function renderSideDishSection() {
+    let sideDishRef = document.getElementById('dish_category_side_dishes_section');
+    sideDishRef.innerHTML = getTemplateSideDishSection();
+    renderSideDishContent();
+}
+
+function renderSideDishContent() {
+    let sideDishRef = document.getElementById('dish_container_side_dishes');
+    sideDishRef.innerHTML = '';
+
+    for (let i = 0; i < menu.side_dishes.length; i++) {
+        const side_dish = menu.side_dishes[i].dish;
+        const price = menu.side_dishes[i].price.toFixed(2);
+        sideDishRef.innerHTML += getTemplateIndividualSideDishes(side_dish, price);
     }
 }
 

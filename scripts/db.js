@@ -68,21 +68,21 @@ let menu = {
     }
   ],
   "side_dishes": [
-    "Pommes Frites",
-    "Bratkartoffeln",
-    "Kartoffelsalat",
-    "Reis",
-    "Gemüse der Saison",
-    "Salat",
-    "Kartoffelpüree",
-    "Spätzle",
-    "Sauerkraut",
-    "Knödel",
-    "Ofenkartoffel mit Kräuterquark",
-    "Buttergemüse",
-    "Wedges",
-    "Kroketten",
-    "Rahmspinat"
+    { "dish": "Pommes Frites", "price": 3.50 },
+    { "dish": "Bratkartoffeln", "price": 4.20 },
+    { "dish": "Kartoffelsalat", "price": 3.80 },
+    { "dish": "Reis", "price": 2.90 },
+    { "dish": "Gemüse der Saison", "price": 4.50 },
+    { "dish": "Salat", "price": 3.90 },
+    { "dish": "Kartoffelpüree", "price": 3.20 },
+    { "dish": "Spätzle", "price": 3.80 },
+    { "dish": "Sauerkraut", "price": 3.00 },
+    { "dish": "Knödel", "price": 3.50 },
+    { "dish": "Ofenkartoffel mit Kräuterquark", "price": 5.20 },
+    { "dish": "Buttergemüse", "price": 3.70 },
+    { "dish": "Wedges", "price": 3.50 },
+    { "dish": "Kroketten", "price": 3.40 },
+    { "dish": "Rahmspinat", "price": 3.20 }
   ],
   "section_images": [
     {

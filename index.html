@@ -5,19 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Best Food Delivery Plattform</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/standard.css">
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/basket.css">
+    <link rel="stylesheet" href="styles/assets.css">
     <script src="scripts/db.js"></script>
     <script src="script.js"></script>
     <script src="scripts/template.js"></script>
+    <script src="scripts/basket.js"></script>
 </head>
 
 <body onload="init()">
     <header class="header_main" w3-include-html="templates/header.html"></header>
     <header class="header_placeholder"></header>
+    <dialog id="confirm_order_dialog">
+        <span>
+            <h1>Vielen Dank für deine Bestellung!</h1>
+        </span>
+    </dialog>
     <main>
         <section class="main_content_container">
             <section class="restaurant_info_section">
@@ -26,22 +35,51 @@
                     <img class="main_restaurant_logo" src="assets/img/restaurant_logo.png" alt="Logo des Restaurants">
                 </article>
                 <article class="mg16">
-                    <h2>Oma's Original Küche</h2>
+                    <h2 class="restaurant_title">Oma's Original Küche</h2>
                     <p class="restaurant_rating">Bewertung (4.7 von 5 Sterne)</p>
                 </article>
             </section>
             <section class="dish_category_navbar">
                 <img class="mg16" src="assets/icons/arrow.png" alt="Bild eines Pfeils">
                 <span id="existing_dish_categories"></span>
-                <span>Beilagen</span>
+                <a href="#dish_category_side_dishes" class="dish_category dish_category_extras">Beilagen</a>
             </section>
             <section id="dish_category_section"></section>
+            <section id="dish_category_side_dishes_section"></section>
         </section>
-        <section class="basket_wrapper">
-            <article class="basket_container"></article>
+        <section id="basket_wrapper" class="basket_wrapper">
+            <article class="basket_container">
+                <h2>Mein Warenkorb</h2>
+                <span class="basket_border"></span>
+                <section class="basket_content" id="basket_content">
+                    <p>Dein Warenkorb ist aktuell leer.</p>
+                </section>
+                <span class="basket_border"></span>
+                <section class="basket_price_section">
+                    <div class="flex-sb">
+                        <span>Zwischensumme</span>
+                        <span id="basket_price_sub_sum">0,00€</span>
+                    </div>
+                    <div class="flex-sb">
+                        <span>Lieferkosten</span>
+                        <span>4,90€</span>
+                    </div>
+                    <div class="flex-sb">
+                        <h4>Gesamt</h4>
+                        <h4 id="basket_price_total_sum">0,00€</h4>
+                    </div>
+                    <button onclick="sendOrder()" id="order_btn" disabled>BESTELLEN</button>
+                    <p id="minimum_order_message">Bitte fügen einen Warenwert von mindestens 19,90€ hinzu, um die
+                        Bestellung abzuschließen</p>
+                </section>
+                 <button id="mobile_close_shopping_cart_btn" class="mobile_close_shopping_cart_btn" onclick="closeMobileBasket()">Warenkorb schließen</button>
+            </article>
+           
         </section>
-    </main>
+        
 
+    </main>
+    <button onclick="showMobileBasket()" class="mobile_basket_btn">Warenkorb ansehen <span id="mobile_amount_basket_items"></span></button>
     <footer class="footer_main" w3-include-html="templates/footer.html"></footer>
 
 </body>
